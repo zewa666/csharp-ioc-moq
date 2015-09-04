@@ -11,8 +11,6 @@ namespace DemoApp
 {
     class Program
     {
-        public static IContainer Container { get; set; }
-
         static void Main(string[] args)
         {
             var builder = new ContainerBuilder();
@@ -21,7 +19,7 @@ namespace DemoApp
             builder.Register<Core>(b => new Core(b.Resolve<IComponentContext>(), b.Resolve<DemoApp.MyService.ITheService>()));
             builder.Register<BusinessLogic.VeryImportantBusinessLogic>(b => new VeryImportantBusinessLogic()).InstancePerLifetimeScope();
 
-            Container = builder.Build();
+            IContainer Container = builder.Build();
 
             Console.WriteLine(Container.Resolve<Core>().Init());
 

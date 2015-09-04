@@ -7,7 +7,6 @@ using System.Text;
 
 namespace DemoService
 {
-    // HINWEIS: Mit dem Befehl "Umbenennen" im Menü "Umgestalten" können Sie den Schnittstellennamen "ITheService" sowohl im Code als auch in der Konfigurationsdatei ändern.
     [ServiceContract]
     public interface ITheService
     {

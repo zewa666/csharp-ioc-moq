@@ -11,7 +11,7 @@ namespace DemoApp_Test
         [TestInitialize]
         public void BeforeEach()
         {
-            DemoApp.IOT.Build();
+            
         }
 
         [TestMethod]

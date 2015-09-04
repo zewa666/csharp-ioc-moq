@@ -9,18 +9,18 @@ namespace DemoApp.BusinessLogic
 {
     public class Core
     {
-        IComponentContext context;
+        IComponentContext Context;
+        ITheService Service;
 
-        public ITheService Service { get; set; }
         public Core(IComponentContext context, ITheService srv)
         {
             this.Service = srv;
-            this.context = context;
+            this.Context = context;
         }
 
         public string Init()
         {
-            var VIP = context.Resolve<VeryImportantBusinessLogic>().GetVIP();
+            var VIP = Context.Resolve<VeryImportantBusinessLogic>().GetVIP();
 
             return this.Service.RegisterPerson(this.GeneratePerson(VIP.firstName, VIP.lastName));
         }
